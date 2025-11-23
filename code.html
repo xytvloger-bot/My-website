@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News.Cric.com - Cricket News & Scores</title>
+    <style>
+        /* Basic CSS for styling */
+        body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #f4f4f4; color: #333; }
+        header { background: #007bff; color: white; padding: 1rem; text-align: center; }
+        nav { margin-top: 1rem; }
+        nav a { margin: 0 1rem; color: white; text-decoration: none; font-weight: bold; }
+        nav a:hover { text-decoration: underline; }
+        main { padding: 2rem; max-width: 1200px; margin: 0 auto; }
+        section { margin-bottom: 2rem; background: white; padding: 1rem; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+        h2 { color: #007bff; }
+        article { margin-bottom: 1rem; }
+        article h3 { color: #333; }
+        article p { line-height: 1.6; }
+        #score-display { font-weight: bold; color: #28a745; }
+        footer { background: #333; color: white; text-align: center; padding: 1rem; margin-top: 2rem; }
+        @media (max-width: 768px) { nav a { display: block; margin: 0.5rem 0; } }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>News.Cric.com</h1>
+        <nav>
+            <a href="#news">News</a>
+            <a href="#scores">Scores</a>
+            <a href="#players">Players</a>
+        </nav>
+    </header>
+    <main>
+        <section id="news">
+            <h2>Latest Cricket News</h2>
+            <article>
+                <h3>India Clinches Victory in T20 Series</h3>
+                <p>In a nail-biting finish, Virat Kohli's century led India to a 3-1 series win against Australia. The match saw thrilling moments with key wickets from Bumrah.</p>
+                <a href="#">Read Full Article</a>
+            </article>
+            <article>
+                <h3>England Announces Squad for Ashes</h3>
+                <p>The England cricket team has unveiled its squad for the upcoming Ashes series, featuring young talents alongside veterans like Joe Root.</p>
+                <a href="#">Read Full Article</a>
+            </article>
+            <!-- Add more articles as needed -->
+        </section>
+        <section id="scores">
+            <h2>Live Scores</h2>
+            <div id="score-display">Loading live scores...</div>
+        </section>
+        <section id="players">
+            <h2>Top Players</h2>
+            <ul>
+                <li><strong>Virat Kohli</strong> - Batsman, India (Runs: 12,000+)</li>
+                <li><strong>Steve Smith</strong> - Batsman, Australia (Average: 60+)</li>
+                <li><strong>Kane Williamson</strong> - Batsman, New Zealand (Captain)</li>
+            </ul>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2023 News.Cric.com. All rights reserved. | Powered by Cricket Enthusiasts</p>
+    </footer>
+    <script>
+        // JavaScript for dynamic content (simulates live scores; replace with real API)
+        function loadScores() {
+            const scores = [
+                "India vs Australia: India 180/5 (18.2 overs) - Kohli 75*",
+                "England vs Pakistan: England 120/2 (15 overs) - Root 50*",
+                "South Africa vs West Indies: Match abandoned due to rain"
+            ];
+            const display = document.getElementById('score-display');
+            display.innerHTML = scores.map(score => `<p>${score}</p>`).join('');
+        }
+        // Load scores on page load
+        window.onload = loadScores;
+        // Optional: Refresh scores every 30 seconds
+        setInterval(loadScores, 30000);
+    </script>
+</body>
+</html>
